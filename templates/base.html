@@ -16,18 +16,24 @@
     <script type="text/javascript">
         $(document).ready(function(){
             $('.collapsible').collapsible();
+            $('select').formSelect();
         });
 
-        $(document).ready(function(){
-            $('.datepicker').datepicker();
+        $('.datepicker').pickadate({
+            selectMonths: true, // Creates a dropdown to control month
+            selectYears: 15, // Creates a dropdown of 15 years to control year,
+            today: 'Today',
+            clear: 'Clear',
+            close: 'Ok',
+            closeOnSelect: false // Close upon selecting a date,
         });
-    <script>
-    
-    <script type="text/javascript">
-    document.getElementById("matfix").addEventListener("click", function(e) {
+
+        document.getElementById("matfix").addEventListener("click", function(e) {
 	    e.stopPropagation();
     });
-    <script>
+    </script>
+    
+    
 
 </body>
 </html>
