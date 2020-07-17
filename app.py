@@ -11,7 +11,7 @@ pa55W0rd = os.environ.get('pa55W0rd')
 
 app = Flask(__name__)
 app.config["MONGO_DBNAME"] = 'task_manager'
-app.config["MONGO_URI"] = 'mongodb+srv://u5erN4me:pa55W0rd@myFirstCluster1208.14c5g.mongodb.net/task_manager?retryWrites=true&w=majority'
+app.config["MONGO_URI"] = 'mongodb+srv://u5erN4me:pa55W0rd@myFirstCluster1208.14c5g.mongodb.net/task_manager?ssl=true&ssl_cert_reqs=CERT_NONE'
 
 mongo = PyMongo(app)
 
