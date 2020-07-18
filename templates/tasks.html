@@ -5,10 +5,14 @@
     {% for task in tasks %}
     <li>
         <div class="collapsible-header">
-            <div class="col s3">
+            <div class="col s1">
                 <i class="material-icons">expand_more</i>
-                <a class="waves-effect waves-light btn btn_small">Done</a>
-                <a class="waves-effect waves-light btn btn_small blue">Edit</a>
+            </div>
+            <div class="col s2">
+                <div class="inline_actions">
+                    <a class="waves-effect waves-light btn btn_small">Done</a>
+                    <a href="{{url_for('edit_task', task_id=task._id)}}" class="waves-effect waves-light btn btn_small blue">Edit</a>
+                </div>
             </div>
             <div class="task_header col s9">
                 <strong>{{task.task_name}}</strong> - {{task.due_date}}
