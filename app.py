@@ -6,12 +6,12 @@ from os import path
 if path.exists("env.py"):
     import env
 
-u5erN4ame = os.environ.get('u5erN4ame')
-pa55W0rd = os.environ.get('pa55W0rd')
+U5ERN4ME = os.environ.get('U5ERN4ME')
+PA55W0RD = os.environ.get('PA55W0RD')
 
 app = Flask(__name__)
 app.config["MONGO_DBNAME"] = 'task_manager'
-# app.config["MONGO_URI"] = 'mongodb+srv://u5erN4me:pa55W0rd@myFirstCluster1208.14c5g.mongodb.net/task_manager?retryWrites=true&w=majority'
+# app.config["MONGO_URI"] = 'mongodb+srv://U5ERN4ME:PA55W0RD@myFirstCluster1208.14c5g.mongodb.net/task_manager?retryWrites=true&w=majority'
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 
 mongo = PyMongo(app)
@@ -49,7 +49,7 @@ def update_task(task_id):
     tasks.update({'_id': ObjectId(task_id)},
     {
         'task_name': request.form.get('task_name'),
-        'category_name': request.form.get('category_name')
+        'category_name': request.form.get('category_name'),
         'task_description': request.form.get('task_description'),
         'due_date': request.form.get('due_date'),
         'is_urgent': request.form.get('is_urgent')
